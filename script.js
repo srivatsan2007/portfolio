@@ -204,4 +204,46 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- View More Projects ---
+    const viewMoreBtn = document.getElementById('view-more-btn');
+    const projects = document.querySelectorAll('.projects .project-card');
+    let isShowingMore = false;
+
+    if (viewMoreBtn) {
+        viewMoreBtn.addEventListener('click', () => {
+            isShowingMore = !isShowingMore;
+            projects.forEach((project, index) => {
+                if (index >= 3) {
+                    project.classList.toggle('hidden-project', !isShowingMore);
+                }
+            });
+            viewMoreBtn.textContent = isShowingMore ? 'Show Less Projects' : 'View More Projects';
+            
+            if (isShowingMore) {
+                setTimeout(triggerReveal, 100);
+            }
+        });
+    }
+
+    // --- View More Certificates ---
+    const viewMoreCertsBtn = document.getElementById('view-more-certs-btn');
+    const certificates = document.querySelectorAll('.certificates .project-card');
+    let isShowingMoreCerts = false;
+
+    if (viewMoreCertsBtn) {
+        viewMoreCertsBtn.addEventListener('click', () => {
+            isShowingMoreCerts = !isShowingMoreCerts;
+            certificates.forEach((cert, index) => {
+                if (index >= 2) {
+                    cert.classList.toggle('hidden-project', !isShowingMoreCerts);
+                }
+            });
+            viewMoreCertsBtn.textContent = isShowingMoreCerts ? 'Show Less Certificates' : 'View More Certificates';
+            
+            if (isShowingMoreCerts) {
+                setTimeout(triggerReveal, 100);
+            }
+        });
+    }
+
 });

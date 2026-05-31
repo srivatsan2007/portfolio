@@ -1106,3 +1106,8 @@ section {
     .exp-card { padding: 2rem; }
     .stat-box { padding: 2rem 1rem; }
 }
+
+/* Hidden Projects */
+.hidden-project {
+    display: none !important;
+}
